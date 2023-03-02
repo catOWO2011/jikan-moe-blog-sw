@@ -1,0 +1,20 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/******************************************/
+/* HEADER */
+/******************************************/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6.4rem;
+  padding: 0 4.8rem;
+}
+
+.logo {
+  height: 4.8rem;
+}
