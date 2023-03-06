@@ -15,7 +15,7 @@ const APIClient = function() {
     });
   },
 
-  this.getSeasonNow = async ({ limit, sortedBy }) => {
+  this.getSeasonNow = async ({ limit, sort }) => {
     let data = [];
     try {
       data = await this.makeRequest({
@@ -25,7 +25,7 @@ const APIClient = function() {
 
       if (data && data.length > 0) {
         const { season, year } = data[0];
-        data.sort( (itemA, itemB) => itemB.score - itemA.score);
+        data.sort(sort);
 
         if (limit && data.length > limit) {
           data = data.slice(0, limit);
