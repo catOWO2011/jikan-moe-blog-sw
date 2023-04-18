@@ -1,0 +1,32 @@
+:root {
+
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* box-sizing means 
+  width = border + padding + width of the content,
+  and height = border + padding + height of the content */
+  outline: none;
+  border: none;
+  text-decoration: none;
+  /* Deletes any underlines from <a> elements */
+}
+
+*::selection {
+  background-color: aqua;
+  color: white;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  /* means Content is clipped if necessary to fit the padding box.
+  No scrollbars are provided, and no support for allowing the user to scroll
+  (such as by dragging or using a scroll wheel) is allowed. */
+  scroll-behavior: smooth;
+  /* The scrolling box scrolls in a smooth fashion using a user-agent-defined timing function over a user-agent-defined period of time */
+  scroll-padding-top: 6rem;
+}
