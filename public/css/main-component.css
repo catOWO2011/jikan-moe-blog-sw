@@ -1,7 +1,3 @@
-:root {
-
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -29,4 +25,16 @@ html {
   scroll-behavior: smooth;
   /* The scrolling box scrolls in a smooth fashion using a user-agent-defined timing function over a user-agent-defined period of time */
   scroll-padding-top: 6rem;
+}
+
+@media (max-width:991px) {
+  html {
+    font: 55%;
+  }
+}
+
+@media (max-width:991px) {
+  html {
+    font: 55%;
+  }
 }

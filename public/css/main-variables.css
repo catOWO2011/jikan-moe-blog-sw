@@ -1,0 +1,5 @@
+:root {
+  --black: #333;
+  --pink: #fba1a1;
+  --pink-border: 0.8rem solid var(--pink);
+}

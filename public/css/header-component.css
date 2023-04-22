@@ -1,0 +1,100 @@
+@import url(./main-variables.css);
+/* You can import from other css file */
+
+.header {
+  position: sticky;
+  /* This property means the header will keep the same position even you go down the page
+  it won't disturb the other elements*/
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.header .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 1.5rem 2rem;
+  background-color: #f4f3ef;
+}
+
+.header .flex .logo img {
+  height: 10rem;
+}
+
+.header .flex .navbar a {
+  margin: 0 1rem;
+  font-size: 2rem;
+  color: #a1a2a6;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: 'Montserrat';
+}
+
+.header .flex .navbar a:hover {
+  color: #a593c2;
+}
+
+.header .triangle {
+  background: url(../img/arrow.png) repeat-x;
+  animation: arrows 1s infinite;
+  font-size: 2rem;
+  background-color: #fcb4b4;
+}
+
+@keyframes arrows {
+  from {
+    background-position: 0px 0px  ;
+  }
+  to {
+    background-position: 32px 0px ;
+  }
+}
+
+#menu-btn {
+  display: none;
+  cursor: pointer;
+}
+
+#menu-btn > * {
+  height: 3rem;
+}
+
+@media (max-width:768px) {
+  #menu-btn {
+    display: inline-block;
+    background-color: var(--pink);
+    border-radius: 10px;
+    padding: 5px;
+    color: #ffffff;
+  }
+
+  #menu-btn.x-icon {
+    transform: rotate(180deg);
+    transition: .2s linear;
+  }
+
+  .header .flex .navbar {
+    position: absolute;
+    top: 99%;
+    left: 0;
+    right: 0;
+    border-top: var(--pink-border);
+    border-bottom: var(--pink-border);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    background-color: #f4f3ef;
+     /* Check https://bennettfeely.com/clippy/ this hides the menu */
+  }
+
+  .header .flex .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    /* Check https://bennettfeely.com/clippy/ this shows the menu */
+  }
+
+  .header .flex .navbar a {
+    display: block;
+    margin: 2rem;
+  }
+}

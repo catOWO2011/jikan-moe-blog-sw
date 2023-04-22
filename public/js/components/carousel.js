@@ -2,12 +2,12 @@ class Carousel {
   #currentSlideIndex;
   #items;
   #dots;
-  #DOT_CLASS_FILL = 'dot-fill';
-  #BTN_RIGHT_SELECTOR = '.btn-right'
-  #BTN_LEFT_SELECTOR = '.btn-left';
+  #DOT_CLASS_FILL = "dot-fill";
+  #BTN_RIGHT_SELECTOR = ".btn-right";
+  #BTN_LEFT_SELECTOR = ".btn-left";
   #DIRECTION = {
-    LEFT: 'LEFT',
-    RIGHT: 'RIGHT'
+    LEFT: "LEFT",
+    RIGHT: "RIGHT",
   };
   static TEMPLATE = `
     <div class="carousel <%- classData %>">
@@ -19,7 +19,9 @@ class Carousel {
           <img class="carousel-image" src="<%- item.imageUrl %>" alt="anime-image">
           <div class="anime-main-description">
             <h1><%- item.title %></h1><br>
-            <p><%- item.synopsis %></p>
+            <div class="synopsis">
+              <%= item.synopsis %> 
+            </div>
           </div>
         </div>
       <%
@@ -59,11 +61,11 @@ class Carousel {
 
   #setupAction() {
     const target = $(`.${this.targetClass}`);
-    this.#items = target.find('.carousel-content');
-    this.#dots = target.find('.dots button');
-    
+    this.#items = target.find(".carousel-content");
+    this.#dots = target.find(".dots button");
+
     this.#removeClassFromItems();
-    
+
     $(this.#items[0]).show();
     $(this.#dots[0]).addClass(this.#DOT_CLASS_FILL);
 
@@ -83,9 +85,11 @@ class Carousel {
     this.#emptyDot();
 
     if (direction == this.#DIRECTION.LEFT) {
-      this.#currentSlideIndex = (this.#currentSlideIndex - 1 + this.#items.length) % this.#items.length;
+      this.#currentSlideIndex =
+        (this.#currentSlideIndex - 1 + this.#items.length) % this.#items.length;
     } else {
-      this.#currentSlideIndex = (this.#currentSlideIndex + 1) % this.#items.length;
+      this.#currentSlideIndex =
+        (this.#currentSlideIndex + 1) % this.#items.length;
     }
 
     this.#showItem();
@@ -99,7 +103,7 @@ class Carousel {
 
   #showItem() {
     const itemToShow = this.#selectDisplayedItem();
-    itemToShow.fadeIn('slow');
+    itemToShow.fadeIn("slow");
   }
 
   #fillDot() {
@@ -125,6 +129,6 @@ class Carousel {
       $(item).hide();
     });
   }
-};
+}
 
 export default Carousel;

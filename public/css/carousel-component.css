@@ -1,0 +1,120 @@
+/* **************************** */
+/* CAROUSEL COMPONENT */
+/* **************************** */
+.carousel {
+  width: 100%;
+  margin: 4.5rem auto;
+  padding: 3.2rem;
+  padding-left: 20%;
+  padding-right: 16rem;
+  position: relative;
+  background-image: url(../img/carousel-background.jpg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: repeat;
+
+  display: flex;
+  align-items: center;
+}
+
+.carousel .carousel-content {
+  display: flex;
+  gap: 86px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.carousel-image {
+  height: 26rem;
+  border-radius: 8px;
+  transform: scale(1.5);
+  box-shadow: 0 12px 24px rgba(228, 219, 243, 0.75);
+}
+
+.carousel .btn {
+  background-color: #fff;
+  border: none;
+  height: 4rem;
+  width: 4rem;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 12px 24px rgba(251, 161, 161, 0.8);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel .btn {
+  cursor: pointer;
+}
+
+.carousel .btn .button-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.carousel .btn.btn-left {
+  left: 10%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.carousel .btn.btn-right {
+  right: 10%;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+
+.carousel .dots {
+  position: absolute;
+  left: 50%;
+  bottom: -54px;
+  transform: translate(-50%, 3.2rem);
+
+  display: flex;
+  gap: 1.5rem;
+}
+
+.carousel .dot {
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: #fff;
+  border: 3px solid #fba1a1;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carousel .dot.dot-fill {
+  background-color: #fba1a1;
+}
+
+.carousel .anime-main-description {
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: rgba(251 161 161 / 80%);
+  overflow: hidden;
+  border-radius: 10px;
+  flex-grow: 1; /* Fill remainder space */
+  color: #ffffff;
+}
+
+.carousel .anime-main-description h1 {
+  font-family: 'Montserrat';
+  font-size: 3rem;
+  text-shadow: -1px 3px 0px #f57f7f;
+}
+
+.carousel .anime-main-description .synopsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  overflow: hidden;
+  font-size: 2rem;
+  height: 16.2rem;
+}
+
+.carousel-section.currentSeasonSection {
+  background-color: #fcb4b4;
+}

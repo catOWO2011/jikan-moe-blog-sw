@@ -1,19 +1,30 @@
-import apiClient from './api-client.js';
-import Carousel from './components/carousel.js';
+import apiClient from "./api-client.js";
+import Carousel from "./components/carousel.js";
+import Navbar from "./components/navbar.js";
 
 const Utils = function () {
   this.buildCurrenSeasonCarousel = async ({ selector, classData }) => {
-    const data = await apiClient.getSeasonNow({ limit: 7, sort: (itemA, itemB) => itemB.score - itemA.score});
-    
-    const htmlCarousel = _.template(Carousel.TEMPLATE)({ items: data, classData });
+    const data = await apiClient.getSeasonNow({
+      limit: 7,
+      sort: (itemA, itemB) => itemB.score - itemA.score,
+    });
+
+    const htmlCarousel = _.template(Carousel.TEMPLATE)({
+      items: data,
+      classData,
+    });
 
     $(selector).html(htmlCarousel);
+    $(selector).addClass("currentSeasonSection");
 
     new Carousel({ targetClass: classData });
   };
 
   this.buildAnimeContainer = async ({ selector, classData }) => {
-    const data = await apiClient.getSeasonNow({ limit: 4, sort: (a, b) => b.popularity - a.popularity});
+    const data = await apiClient.getSeasonNow({
+      limit: 8,
+      sort: (a, b) => b.popularity - a.popularity,
+    });
 
     const CONTAINER_TEMPLATE = `
       <div class="section-container">
@@ -44,7 +55,12 @@ const Utils = function () {
                   </a>
                 </div>
                 <div class="anime-information">
-                  <span class="anime-name"><%- item.title %></span class="anime-name">
+                  <div class="anime-hover-information">
+                    BUTTTON
+                  </div>
+                  <div class="anime-first-information">
+                    <span class="anime-name"><%- item.title %></span class="anime-name">
+                  </div>
                 </div>
               </div>
             </div>
@@ -55,8 +71,15 @@ const Utils = function () {
         </div>
       </div>`;
 
-    const htmlCurrentSeason = _.template(CONTAINER_TEMPLATE) ({ items: data, classData });
+    const htmlCurrentSeason = _.template(CONTAINER_TEMPLATE)({
+      items: data,
+      classData,
+    });
     $(selector).html(htmlCurrentSeason);
+  };
+
+  this.buildNavbar = () => {
+    new Navbar();
   };
 };
 
