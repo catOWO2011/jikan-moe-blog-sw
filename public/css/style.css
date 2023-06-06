@@ -9,6 +9,7 @@ body {
   font-weight: 400;
   color: #555;
 }
+
 /******************************************/
 /* SECTION CONTAINER */
 /******************************************/
@@ -17,8 +18,7 @@ body {
   background-color: #a593c2;
 }
 
-.current-season-section
-.section-container {
+.current-season-section .section-container {
   padding: 1.5rem;
 }
 
@@ -32,75 +32,4 @@ body {
   font-family: 'Great Vibes';
   font-size: 5rem;
   text-transform: capitalize;
-}
-
-/******************************************/
-/* CARD ANIME DESCRIPTION */
-/******************************************/
-
-.anime-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 30rem);
-  gap: 1.5rem;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.anime-card-description {
-  padding: 0px 10px;
-  flex: 0 0 50%;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.anime-card-description .image-container {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.anime-card-description
-.anime-card-inner {
-  position: relative;
-  overflow: hidden;
-  border-radius: 1rem;
-}
-
-.anime-card-description
-.anime-link:hover
-.image-container {
-  transition: all 0.5s ease 0s;
-  transform: scale(1.2);
-}
-
-.anime-card-description
-.anime-card-inner
-.image-container {
-  padding-top: 120%;
-  border-radius: 1rem;
-}
-
-.anime-card-description
-.anime-information {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  background-color: #f4f3ef;
-  padding: 0.5rem;
-  border-radius: 0rem 0rem 1rem 1rem;
-  width: 100%;
-}
-
-.anime-card-description
-.anime-information
-.anime-name {
-  font-size: 2rem;
-  color: #875cad;
-  font-weight: 500;
 }

@@ -1,0 +1,124 @@
+/******************************************/
+/* CARD ANIME DESCRIPTION */
+/******************************************/
+
+.anime-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 30rem);
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.anime-card-description {
+  padding: 0px 10px;
+  flex: 0 0 50%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.anime-card-description .image-container {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.anime-card-description .anime-card-inner {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.anime-card-description .anime-link:hover .image-container {
+  transition: all 0.5s ease 0s;
+  transform: scale(1.2);
+}
+
+.anime-card-description .anime-card-inner .image-container {
+  padding-top: 160%;
+  border-radius: 1rem;
+}
+
+.anime-card-description .anime-information {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  background-color: #ffffff;
+  border-radius: 0rem 0rem 1rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  height: 25%;
+}
+
+.anime-card-description .anime-information .anime-name {
+  font-size: 2rem;
+  color: #875cad;
+  font-weight: 500;
+}
+
+.anime-card-description .anime-information .anime-first-information {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.anime-card-description .anime-first-information .anime-description-container {
+  padding: 2rem;
+}
+
+.anime-card-description .anime-information .anime-options {
+  background: url(../img/dot-pink.png) repeat;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  animation: dotblue 0.5s infinite;
+}
+
+.anime-card-description .anime-card-inner:hover .anime-information .anime-options,
+.anime-card-description .anime-information .anime-options:hover {
+  opacity: 1;
+}
+
+@keyframes dotblue {
+  from {
+    background-position: 32px 0px;
+  }
+
+  ro {
+    background-position: 0px 0px;
+  }
+}
+
+.anime-card-description .anime-first-information .button-watch-container {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.anime-card-description .anime-first-information .button-watch-container .button-watch {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.anime-card-description .anime-first-information .button-watch-container .button-watch .button-watch-anime {
+  background-color: #f8d4d3;
+  padding: 1.5rem 2rem;
+  text-transform: uppercase;
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  font-family: 'Montserrat';
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.anime-card-description .anime-first-information .button-watch-container .button-watch .button-watch-anime:hover {
+  background-color: #e3534f;
+}

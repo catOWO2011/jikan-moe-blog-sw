@@ -55,11 +55,17 @@ const Utils = function () {
                   </a>
                 </div>
                 <div class="anime-information">
-                  <div class="anime-hover-information">
-                    BUTTTON
-                  </div>
                   <div class="anime-first-information">
-                    <span class="anime-name"><%- item.title %></span class="anime-name">
+                    <div class="anime-options">
+                      <div class="button-watch-container">
+                        <div class="button-watch">
+                          <button class="button-watch-anime">Watch</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="anime-description-container">
+                      <span class="anime-name"><%- item.title %></span class="anime-name">
+                    </div>
                   </div>
                 </div>
               </div>
