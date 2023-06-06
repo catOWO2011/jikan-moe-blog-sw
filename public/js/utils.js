@@ -64,7 +64,9 @@ const Utils = function () {
                       </div>
                     </div>
                     <div class="anime-description-container">
-                      <span class="anime-name"><%- item.title %></span class="anime-name">
+                      <div class="anime-name-container">
+                        <span class="anime-name"><%- item.title %></span>
+                      </div>
                     </div>
                   </div>
                 </div>
