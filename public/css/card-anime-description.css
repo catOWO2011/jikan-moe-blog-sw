@@ -4,7 +4,7 @@
 
 .anime-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 30rem);
+  grid-template-columns: repeat(auto-fit, 28rem);
   gap: 1.5rem;
   align-items: flex-start;
   justify-content: center;
@@ -33,7 +33,7 @@
 }
 
 .anime-card-description .anime-link:hover .image-container {
-  transition: all 0.5s ease 0s;
+  transition: all 1.0s ease 0s;
   transform: scale(1.2);
 }
 

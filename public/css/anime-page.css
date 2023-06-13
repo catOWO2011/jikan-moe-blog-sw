@@ -1,0 +1,189 @@
+.container-anime-title {
+  background: url(../img/small-dot-purple.png) repeat;
+  height: 7rem;
+  color: #f4f3ef;
+  font-size: 2rem;
+  padding: 1rem;
+  height: 100%;
+}
+
+.container-anime-title .title-anime {
+  padding: 2rem;
+}
+
+.container-anime-title .title-anime h1 {
+  font-family: 'Montserrat';
+  text-shadow: -1px 3px 0px #c0ace0;
+}
+
+.purple-line {
+  background: url(../img/purple-line.png) repeat;
+  height: 1rem;
+}
+
+.anime-details-container {
+  background: #f4f3ef;
+  width: 100%;
+}
+
+.anime-details-container .anime-general-details {
+  padding: 2rem 2rem;
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.anime-details-container .anime-general-details .anime-image-container {
+  width: 30rem;
+  position: relative;
+}
+
+.anime-details-container .anime-general-details .anime-image-container .anime-main-image {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.anime-details-container .anime-general-details .anime-image-container .score {
+  top: 1rem;
+  right: 1rem;
+  position: absolute;
+  background: #a593c2f2;
+  padding: 1rem;
+  color: #f8f5fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+}
+
+.anime-details-container .anime-general-details .anime-image-container .score h1 {
+  font-family: 'Montserrat';
+  font-size: 2.6rem;
+}
+
+.anime-details-container .anime-general-details .anime-image-container .score .icon {
+  font-size: 3rem;
+  margin-right: 1rem;
+}
+
+.anime-details-container .anime-general-details .anime-image-container .score .score-note span {
+  font-size: 1.5rem;
+}
+
+.anime-details-container .anime-general-details .anime-image-section-detail {
+  /* width: 50%; */
+}
+
+.anime-details-container .anime-general-details .anime-information-container {
+  padding: 1rem 2rem;
+}
+
+.anime-details-container .anime-general-details .anime-information-container .subsection-anime-info-title {
+  font-family: 'Montserrat';
+  font-size: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: dashed 1px #a1a2a6;
+  color: #fba1a1;
+}
+
+.anime-details-container .anime-general-details .anime-information-container .anime-information-details .synopsis {
+  font-size: 2rem;
+  padding: 3rem 0rem;
+  color: #a1a2a6;
+}
+
+.anime-details-container .anime-general-details .anime-information-container .table-info {
+  font-size: 2rem;
+}
+
+.anime-details-container .anime-general-details .anime-information-container .table-info .cell-info {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  padding: 1rem;
+}
+
+.anime-details-container .anime-general-details .anime-information-container .table-info .cell-info ion-icon {
+  margin-right: 1rem;
+  font-size: 3rem;
+  color: #fba1a1;
+}
+
+.anime-details-container .anime-general-details .anime-information-container .table-info .cell-info .cell-label {
+  margin-right: 2rem;
+  font-family: 'Montserrat';
+  color: #fba1a1;
+}
+
+.anime-details-container .anime-general-details .anime-information-container .table-info .cell-info .cell-content {
+  color: #a1a2a6;
+}
+
+.anime-details-container .anime-general-details .anime-information-container .table-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* ANIME SUBDETAILS CONTAINER */
+
+.anime-details-container .anime-general-subdetails-container {
+  padding: 0rem 2rem;
+}
+
+.anime-details-container .anime-general-subdetails-container .anime-general-subdetails .anime-general-subdetails-tab-container .nav-tabs li {
+  font-size: 2rem;
+  padding: 2rem;
+  font-family: 'Montserrat';
+  background: #a593c2bf;
+  display: inline-block;
+  margin: 0rem 1rem;
+}
+
+.anime-details-container .anime-general-subdetails-container .anime-general-subdetails .anime-general-subdetails-tab-container .nav-tabs li a {
+  color: #ffffff;
+}
+
+.anime-details-container .anime-general-subdetails-container .anime-general-subdetails .anime-general-subdetails-tab-container .nav-tabs li.active {
+  background: #9078b7;
+}
+
+.anime-general-subdetails-tab-container-content {
+  padding: 2rem;
+}
+
+.anime-general-subdetails-tab-container-content .videos-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 20rem);
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.anime-general-subdetails-tab-container-content .videos-content .video-list-outer {
+  font-size: 1.6rem;
+  width: min-content;
+}
+
+.anime-general-subdetails-tab-container-content .videos-content .video-list-outer img {
+  width: 20rem;
+  height: 11rem;
+}
+
+.anime-general-subdetails-tab-container-content .videos-content .video-list-outer .video-link {
+  display: inline-block;
+  position: relative;
+}
+
+.anime-general-subdetails-tab-container-content .videos-content .video-list-outer .video-info-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  color: #ffffff;
+}
+
+.anime-general-subdetails-tab-container-content .videos-content .video-list-outer .video-info-container span {
+  padding: 0.5rem;
+  width: 100%;
+  display: block;
+  background: #59d4f096;
+}

@@ -16,7 +16,7 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
-  padding: 1.5rem 2rem;
+  padding: 0rem 2rem;
   background-color: #f4f3ef;
 }
 
@@ -24,17 +24,65 @@
   height: 10rem;
 }
 
+.header .flex .navbar .navbar-options {
+  display: flex;
+}
+
+.header .flex .navbar .navbar-options .anime-nav-options {
+  display: none;
+}
+
+.header .flex .navbar .navbar-options .nav-main-option-link {
+  float: left;
+}
+
+.header .flex .navbar .navbar-options .nav-main-option-link:hover {
+  background-color: #a1a2a6;
+  /* padding: 1rem 0; */
+}
+
+.header .flex .navbar .navbar-options .nav-main-option-link .option-link {
+  padding: 1rem;
+}
+
+.header .flex .navbar .navbar-options .nav-main-option-link a {
+  padding: 2rem;
+}
+
+.header .flex .navbar .navbar-options .nav-main-option-link:hover a {
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.header .flex .navbar .navbar-options .nav-main-option-link:hover .anime-nav-options {
+  display: block;
+  position: absolute;
+  background-color: #a1a2a6;
+}
+
+.header .flex .navbar .navbar-options .nav-main-option-link:hover .anime-nav-options a {
+  color: #ffffff;
+}
+
+.header .flex .navbar .navbar-options .nav-main-option-link .anime-nav-options li {
+  padding: 1rem;
+}
+
+li {
+  list-style: none;
+}
+
 .header .flex .navbar a {
   margin: 0 1rem;
   font-size: 2rem;
   color: #a1a2a6;
   text-transform: uppercase;
-  font-weight: 900;
-  font-family: 'Montserrat';
+  font-weight: 500;
+  font-family: 'Noto Sans Bassa Vah';
 }
 
 .header .flex .navbar a:hover {
-  color: #a593c2;
+  color: #fba1a1;
 }
 
 .header .triangle {
@@ -46,10 +94,11 @@
 
 @keyframes arrows {
   from {
-    background-position: 0px 0px  ;
+    background-position: 0px 0px;
   }
+
   to {
-    background-position: 32px 0px ;
+    background-position: 32px 0px;
   }
 }
 
@@ -58,7 +107,7 @@
   cursor: pointer;
 }
 
-#menu-btn > * {
+#menu-btn>* {
   height: 3rem;
 }
 
@@ -85,7 +134,7 @@
     border-bottom: var(--pink-border);
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     background-color: #f4f3ef;
-     /* Check https://bennettfeely.com/clippy/ this hides the menu */
+    /* Check https://bennettfeely.com/clippy/ this hides the menu */
   }
 
   .header .flex .navbar.active {

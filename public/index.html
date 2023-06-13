@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
     <link href="css/main-variables.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet"/>
     <link href="css/main-component.css" rel="stylesheet"/>
@@ -12,6 +15,7 @@
     <link href="css/header-component.css" rel="stylesheet"/>
     <link href="css/carousel-component.css" rel="stylesheet"/>
     <link href="css/card-anime-description.css" rel="stylesheet"/>
+    <link href="css/anime-page.css" rel="stylesheet"/>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,8 +29,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bassa+Vah&display=swap" rel="stylesheet">
+
     <script type="module" src="js/jquery/jquery-3.6.3.min.js"></script>
     <script type="module" src="js/underscore/underscore-umd-min.js"></script>
+
+    <script type="module" src="js/url-router.js"></script>
+
     <script type="module" src="js/api-client.js"></script>
 
     <script type="module" src="js/components/carousel.js"></script>
@@ -42,10 +53,36 @@
       <section class="flex">
         <a href="#home" class="logo"><img class="logo-img" alt="logo" src="img/hakase-nichijou-icon.svg"/></a>
         <nav class="navbar">
-          <a href="#">Anime</a>
-          <a href="#">Manga</a>
-          <a href="#">Producers</a>
-          <a href="#">Recommendations</a>
+          <ul class="navbar-options">
+            <li class="nav-main-option-link">
+              <div class="option-link">
+                <a href="#">Anime</a>
+              </div>
+              <ul class="anime-nav-options">
+                <li><a>Anime Search</a></li>
+                <li><a>Seasonal Anime</a></li>
+              </ul>
+            </li>
+            <li class="nav-main-option-link">
+              <div class="option-link">
+                <a href="#">Manga</a>
+              </div>
+              <ul class="anime-nav-options">
+                <li><a>Manga Search</a></li>
+                <li><a>Top Manga</a></li>
+              </ul>
+            </li>
+            <li class="nav-main-option-link">
+              <div class="option-link">
+                <a href="#">Producers</a>
+              </div>
+            </li>
+            <li class="nav-main-option-link">
+              <div class="option-link">
+                <a href="#">Recommendations</a>
+              </div>
+            </li>
+          </ul>
         </nav>
         <div id="menu-btn">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" class="w-6 h-6">
@@ -57,62 +94,7 @@
         &nbsp;
       </div>
     </header>
-    <section class="carousel-section">
-      <div class="carousel">
-        <div class="carousel-content">
-          <img class="carousel-image" src="https://cdn.myanimelist.net/images/anime/1058/131632l.jpg" alt="anime-image">
-          <div class="anime-main-description">
-            <h1>Onimai: I'm Now Your Sister!</h1><br>
-            <p>Mahiru Shiina is worthy of her nickname "Angel": she is a divine beauty loved by all, and she excels in both academics and athletics. Shiina lives in an entirely different world from Amane Fujimiya, her next-door neighbor. Despite living so close together, they have never spoken once. But their silence is broken when Fujimiya spots Shiina gloomily sitting on a swing amidst a heavy rainstorm and lends her his umbrella. <br><br>When Fujimiya catches a cold the next day, Shiina wishes to return the favor for the umbrella by nursing him back to health. Believing that this would be their first and last interaction, he silently appreciates her kindness. However, Shiina—who can not help but worry about Fujimiya's lack of tidiness and proper nutrition—begins to cook and clean for him. As the unlikely pair spend time together in Fujimiya's apartment, they explore the true nature of their relationship and the gentle emotions that emerge from it.<br><br>[Written by MAL Rewrite]</p>
-          </div>
-        </div>
-        <button class="btn btn-left">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="button-icon">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-          </svg>
-        </button>
-        <button class="btn btn-right">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="button-icon">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-          </svg>
-        </button>
-        <div class="dots">
-          <button class="dot dot-fill">&nbsp</button>
-          <button class="dot">&nbsp</button>
-          <button class="dot">&nbsp</button>
-          <button class="dot">&nbsp</button>
-        </div>
-      </div>
-    </section>
-    <section class="current-season-section">
-      <div class="section-container">
-        <div class="title-container">
-          <div class="title">
-            <h2>Winter</h2>
-          </div>
-        </div>
-        <div class="anime-container">
-          <div class="anime-card-description">
-            <div class="anime-card-inner">
-              <div class="anime-image">
-                <a class="anime-link" href="#">
-                  <div 
-                    class="image-container"
-                    style="
-                      background-image: url('https://cdn.myanimelist.net/images/anime/1058/131632l.jpg');
-                      background-position: center center;
-                    "
-                  >
-                  </div>
-                </a>
-              </div>
-              <div class="anime-information">
-                <span class="anime-name">Onimai: I'm Now Your Sister!</span class="anime-name">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div id="main-content-page">
+    </div>
   </body>
 </html>
