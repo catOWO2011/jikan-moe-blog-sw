@@ -1,20 +1,3 @@
-// const routes = {
-//   404: {
-//     template: "/templates/404.html",
-//     title: "404",
-//     description: "Page not found",
-//   },
-//   "/": {
-//     template: "/templates/index.html",
-//     title: "Home",
-//     description: "This is the home page",
-//   },
-//   "anime-details-page": {
-//     template: "/public/anime-details-page.html",
-//     title: "About Us",
-//     description: "This is the about page",
-//   },
-// };
 import utils from "./utils.js";
 
 const urlLocationHandler = async () => {

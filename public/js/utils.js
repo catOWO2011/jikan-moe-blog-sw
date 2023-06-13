@@ -149,7 +149,7 @@ const Utils = function () {
               <div class="anime-information-details">
                 <div class="synopsis">
                   <!-- synopsis -->
-                  <p><%- item.synopsis %></p>
+                  <p><%= item.synopsis %></p>
                 </div>
                 <div class="table-info">
                   <div class="cell-info">
