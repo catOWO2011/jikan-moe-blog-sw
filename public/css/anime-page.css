@@ -1,3 +1,13 @@
+.body-container-anime-details .loading-message {
+  padding: 4rem;
+  font-family: 'Great Vibes';
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  background: url(../img/dot-pink.png);
+  color: #f8f5fb;
+}
+
 .container-anime-title {
   background: url(../img/small-dot-purple.png) repeat;
   height: 7rem;
@@ -8,7 +18,7 @@
 }
 
 .container-anime-title .title-anime {
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .container-anime-title .title-anime h1 {
@@ -57,7 +67,7 @@
 
 .anime-details-container .anime-general-details .anime-image-container .score h1 {
   font-family: 'Montserrat';
-  font-size: 2.6rem;
+  font-size: 3rem;
 }
 
 .anime-details-container .anime-general-details .anime-image-container .score .icon {
@@ -66,7 +76,7 @@
 }
 
 .anime-details-container .anime-general-details .anime-image-container .score .score-note span {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .anime-details-container .anime-general-details .anime-image-section-detail {
@@ -86,41 +96,48 @@
 }
 
 .anime-details-container .anime-general-details .anime-information-container .anime-information-details .synopsis {
-  font-size: 2rem;
-  padding: 3rem 0rem;
-  color: #a1a2a6;
+  font-size: 1.7rem;
+  padding: 2rem 2rem;
+  color: #565964;
+  line-height: 1.3;
 }
 
-.anime-details-container .anime-general-details .anime-information-container .table-info {
+.anime-details-container .table-info {
   font-size: 2rem;
+  background: #ffffff;
+  margin: 2rem;
+  border-radius: 1rem;
 }
 
-.anime-details-container .anime-general-details .anime-information-container .table-info .cell-info {
+.anime-details-container .table-info .cell-info {
   display: flex;
   align-items: center;
   vertical-align: middle;
   padding: 1rem;
 }
 
-.anime-details-container .anime-general-details .anime-information-container .table-info .cell-info ion-icon {
+.anime-details-container .table-info .cell-info ion-icon {
   margin-right: 1rem;
   font-size: 3rem;
-  color: #fba1a1;
+  color: #f88c91;
 }
 
-.anime-details-container .anime-general-details .anime-information-container .table-info .cell-info .cell-label {
+.anime-details-container .table-info .cell-info .cell-label {
   margin-right: 2rem;
   font-family: 'Montserrat';
   color: #fba1a1;
 }
 
-.anime-details-container .anime-general-details .anime-information-container .table-info .cell-info .cell-content {
+.anime-details-container .table-info .cell-info .cell-content {
   color: #a1a2a6;
+  font-weight: bold;
 }
 
-.anime-details-container .anime-general-details .anime-information-container .table-info {
+.anime-details-container .table-info {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, 40rem);
+  justify-content: center;
+  padding: 1rem;
 }
 
 /* ANIME SUBDETAILS CONTAINER */
@@ -136,10 +153,9 @@
   background: #a593c2bf;
   display: inline-block;
   margin: 0rem 1rem;
-}
-
-.anime-details-container .anime-general-subdetails-container .anime-general-subdetails .anime-general-subdetails-tab-container .nav-tabs li a {
+  border-radius: 1rem 1rem 0rem 0rem;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .anime-details-container .anime-general-subdetails-container .anime-general-subdetails .anime-general-subdetails-tab-container .nav-tabs li.active {
@@ -148,6 +164,9 @@
 
 .anime-general-subdetails-tab-container-content {
   padding: 2rem;
+  border: 0.6rem solid #9078b7;
+  border-radius: 1rem;
+  background: #e6c9ff;
 }
 
 .anime-general-subdetails-tab-container-content .videos-content {
@@ -155,17 +174,19 @@
   grid-template-columns: repeat(auto-fit, 20rem);
   gap: 1.5rem;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .anime-general-subdetails-tab-container-content .videos-content .video-list-outer {
   font-size: 1.6rem;
   width: min-content;
+  border-radius: 1rem;
 }
 
 .anime-general-subdetails-tab-container-content .videos-content .video-list-outer img {
   width: 20rem;
   height: 11rem;
+  border-radius: 1rem;
 }
 
 .anime-general-subdetails-tab-container-content .videos-content .video-list-outer .video-link {
@@ -182,8 +203,13 @@
 }
 
 .anime-general-subdetails-tab-container-content .videos-content .video-list-outer .video-info-container span {
-  padding: 0.5rem;
+  padding: 0.3rem;
   width: 100%;
   display: block;
   background: #59d4f096;
+  border-radius: 0rem 0rem 1rem 1rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }

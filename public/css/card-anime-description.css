@@ -32,7 +32,7 @@
   border-radius: 1rem;
 }
 
-.anime-card-description .anime-link:hover .image-container {
+.anime-card-description:hover .image-container {
   transition: all 1.0s ease 0s;
   transform: scale(1.2);
 }

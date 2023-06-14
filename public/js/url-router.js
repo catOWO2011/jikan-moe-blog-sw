@@ -40,7 +40,18 @@ const urlLocationHandler = async () => {
     `;
   } else if (location.startsWith("anime-details-page")) {
     template = `
-      <div class="body-container-anime-details"></div>
+      <div class="body-container-anime-details">
+        <div class="spinner-component">
+          <div class="box">
+            <div class="content">
+              <img src="img/sakamoto-sleeping.gif">
+            </div>
+          </div>
+        </div>
+        <div class="loading-message">
+          <h1>Loading...</h1>
+        </div>
+      </div>
     `;
   }
 
@@ -60,7 +71,6 @@ const urlLocationHandler = async () => {
     });
   } else if (location.startsWith("anime-details-page")) {
     let animeId = location.match(/\d+$/g)[0];
-    console.log(animeId);
     await utils.buildAnimeDetailsPage({
       selector: ".body-container-anime-details",
       animeId,

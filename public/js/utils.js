@@ -43,16 +43,14 @@ const Utils = function () {
             <div class="anime-card-description">
               <div class="anime-card-inner">
                 <div class="anime-image">
-                  <a class="anime-link" href="#">
-                    <div 
-                      class="image-container"
-                      style="
-                        background-image: url('<%- item.imageUrl %>');
-                        background-position: center center;
-                      "
-                    >
-                    </div>
-                  </a>
+                <div 
+                  class="image-container"
+                  style="
+                    background-image: url('<%- item.imageUrl %>');
+                    background-position: center center;
+                  "
+                >
+                </div>
                 </div>
                 <div class="anime-information">
                   <div class="anime-first-information">
@@ -85,13 +83,6 @@ const Utils = function () {
     });
 
     $(selector).html(htmlCurrentSeason);
-
-    // $(".button-watch-anime").on("click", ({ currentTarget }) => {
-    //   const animeId = $(currentTarget).data("animeId");
-    //   console.log(animeId, "THIS");
-    //   // location.replace(`anime-page-details?id=${animeId}`);
-    //   window.location = `anime-page-details?a=1`;
-    // });
   };
 
   this.buildSpinnerComponent = ({ selector }) => {
@@ -151,7 +142,10 @@ const Utils = function () {
                   <!-- synopsis -->
                   <p><%= item.synopsis %></p>
                 </div>
-                <div class="table-info">
+              </div>
+            </div>
+          </div>
+          <div class="table-info">
                   <div class="cell-info">
                     <ion-icon name="desktop-outline"></ion-icon>
                     <span class="cell-label">Type  </span>
@@ -201,27 +195,18 @@ const Utils = function () {
                     <span class="cell-content"><%- item.rank %></span>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
           <div class="anime-general-subdetails-container">
             <div class="anime-general-subdetails">
               <div class="anime-general-subdetails-tab-container">
                 <ul class="nav-tabs">
                   <li class="active">
-                    <a href="#videos">
-                      Videos
-                    </a>
+                    Videos
                   </li>
                   <li class="">
-                    <a href="#characters-staff">
-                      Characters & Staff
-                    </a>
+                    Characters & Staff
                   </li>
                   <li class="">
-                    <a href="#episodes">
-                      Episodes
-                    </a>
+                    Episodes
                   </li>
                 </ul>
               </div>

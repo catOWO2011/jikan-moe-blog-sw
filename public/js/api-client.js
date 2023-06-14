@@ -134,6 +134,13 @@ const APIClient = function () {
         !_.isEmpty(response)
       ) {
         const { episodes } = response;
+
+        // Sort episodes before they get processed
+        episodes.sort(
+          ({ mal_id: episodeAID }, { mal_id: episodeBID }) =>
+            episodeAID - episodeBID
+        );
+
         if (
           !_.isNull(episodes) &&
           !_.isUndefined(episodes) &&
@@ -156,10 +163,14 @@ const APIClient = function () {
           }
         }
       }
-
-      console.log(response, " response");
     } catch (error) {}
 
+    return data;
+  };
+
+  this.getAnimeCharacteres = async (animeId) => {
+    // https://api.jikan.moe/v4/anime/{id}/characters
+    let data = [];
     return data;
   };
 };
