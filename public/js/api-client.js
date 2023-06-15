@@ -171,6 +171,62 @@ const APIClient = function () {
   this.getAnimeCharacteres = async (animeId) => {
     // https://api.jikan.moe/v4/anime/{id}/characters
     let data = [];
+
+    try {
+      let response = await this.makeRequest({
+        type: GET,
+        url: `${BASE_URL}/${API_VERSION}/anime/${animeId}/characters`,
+      });
+
+      if (
+        !_.isNull(response) &&
+        !_.isUndefined(response) &&
+        !_.isEmpty(response)
+      ) {
+        for (const {
+          character: {
+            images: {
+              jpg: { image_url: imageUrl },
+            },
+            name,
+          },
+          role,
+          voice_actors,
+        } of response) {
+          const newCharacter = {
+            name,
+            imageUrl,
+            role,
+            voiceActors: [],
+          };
+
+          if (
+            !_.isNull(voice_actors) &&
+            !_.isUndefined(voice_actors) &&
+            !_.isEmpty(voice_actors)
+          ) {
+            for (const {
+              person: {
+                images: {
+                  jpg: { image_url: imageUrl },
+                },
+                name,
+              },
+              language,
+            } of voice_actors) {
+              newCharacter.voiceActors.push({
+                name,
+                language,
+                imageUrl,
+              });
+            }
+          }
+
+          data.push(newCharacter);
+        }
+      }
+    } catch (error) {}
+
     return data;
   };
 };

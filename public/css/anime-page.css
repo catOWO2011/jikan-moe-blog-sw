@@ -213,3 +213,52 @@
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
+
+/* ANIME CHARACTER CARD */
+
+.table-characters-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 30rem);
+  gap: 1.5rem;
+}
+
+.character-container {
+  position: relative;
+  width: 30rem;
+  height: 20rem;
+  border-radius: 1rem;
+  background: #f8d4d3;
+}
+
+.character-container .top {
+  background-color: #f88c91;
+  height: 11rem;
+  border-radius: 1rem 1rem 0rem 0rem;
+}
+
+.character-container img {
+  width: 15rem;
+  clip-path: circle(38% at 50% 50%);
+  position: absolute;
+  top: -0.5rem;
+  left: 1rem;
+}
+
+.character-container .character-information {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.character-container .character-information .name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #f8f5fb;
+}
+
+.character-container .character-information .role {
+  font-size: 1.2rem;
+  font-weight: bold;
+}

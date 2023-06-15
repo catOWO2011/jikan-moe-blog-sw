@@ -105,7 +105,7 @@ const Utils = function () {
 
   this.buildAnimeDetailsPage = async ({ selector, animeId }) => {
     const animeInformation = await apiClient.getAnimeById(animeId);
-    console.log("details page", animeInformation);
+
     const CONTAINER_TEMPLATE = `
       <div>
         <div class="container-anime-title">
@@ -199,18 +199,21 @@ const Utils = function () {
             <div class="anime-general-subdetails">
               <div class="anime-general-subdetails-tab-container">
                 <ul class="nav-tabs">
-                  <li class="active">
+                  <li class="active anime-tab" data-content="videos" data-container="video-content-container">
                     Videos
                   </li>
-                  <li class="">
+                  <li class="anime-tab" data-content="characters" data-container="characters-content-container">
                     Characters & Staff
                   </li>
-                  <li class="">
+                  <li class="anime-tab" data-content="episodes">
                     Episodes
                   </li>
                 </ul>
               </div>
               <div class="anime-general-subdetails-tab-container-content">
+                <div class="video-content-container"></div>
+                <div class="characters-content-container"></div>
+                <div class="episodes-content-container"></div>
               </div>
             </div>
           </div>
@@ -226,8 +229,47 @@ const Utils = function () {
       $(selector).html(animeInformationHTML);
 
       this.buildAnimeDetailsVideos({
-        selector: `.anime-general-subdetails-tab-container-content`,
+        selector: `.anime-general-subdetails-tab-container-content .video-content-container`,
         animeId,
+      });
+
+      this.buildAnimeDetailsCharacteres({
+        selector:
+          ".anime-general-subdetails-tab-container-content .characters-content-container",
+        animeId,
+      });
+
+      console.log(
+        $(
+          ".anime-general-subdetails-tab-container-content .characters-content-container"
+        )
+      );
+      $(
+        ".anime-general-subdetails-tab-container-content .characters-content-container"
+      ).hide();
+
+      const utils = this;
+      let activeTab = "videos";
+      $("li.anime-tab").on("click", function (event) {
+        const newTab = $(event.target);
+        const newTabName = newTab.data("content");
+
+        if (newTabName !== activeTab) {
+          const activeTabContent = $($(`li[data-content="${activeTab}"]`));
+
+          const containerActiveTab = $(
+            `.${activeTabContent.data("container")}`
+          );
+          containerActiveTab.hide();
+
+          const newTabContent = $(`.${newTab.data("container")}`);
+          newTabContent.show();
+
+          newTab.addClass("active");
+          activeTabContent.removeClass("active");
+
+          activeTab = newTabName;
+        }
       });
     }
   };
@@ -270,6 +312,43 @@ const Utils = function () {
       });
 
       $(selector).html(animeVideosHTML);
+    }
+  };
+
+  this.buildAnimeDetailsCharacteres = async ({ selector, animeId }) => {
+    const charactersInformation = await apiClient.getAnimeCharacteres(animeId);
+
+    const CONTAINER_TEMPLATE = `
+      <div class="table-characters-info">
+        <%
+          _.each(items, (item, key, list) => {
+        %>
+          <div class="character-container">
+            <div class="top"></div>
+            <img src="<%- item.imageUrl %>" alt="">
+            <div class="character-information">
+              <span class="name">
+                <!-- name -->
+                <%- item.name %>
+              </span>
+              <span class="role">
+                <!-- role -->
+                <%- item.role %>
+              </span>
+            </div>
+          </div>
+        <%
+          });
+        %>
+      </div>
+    `;
+
+    if (!_.isEmpty(charactersInformation)) {
+      const animeCharactersHTML = _.template(CONTAINER_TEMPLATE)({
+        items: charactersInformation,
+      });
+
+      $(selector).html(animeCharactersHTML);
     }
   };
 };
