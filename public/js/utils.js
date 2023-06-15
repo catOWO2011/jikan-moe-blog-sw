@@ -248,7 +248,6 @@ const Utils = function () {
         ".anime-general-subdetails-tab-container-content .characters-content-container"
       ).hide();
 
-      const utils = this;
       let activeTab = "videos";
       $("li.anime-tab").on("click", function (event) {
         const newTab = $(event.target);

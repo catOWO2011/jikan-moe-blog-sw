@@ -169,7 +169,6 @@ const APIClient = function () {
   };
 
   this.getAnimeCharacteres = async (animeId) => {
-    // https://api.jikan.moe/v4/anime/{id}/characters
     let data = [];
 
     try {

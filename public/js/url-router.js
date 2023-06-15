@@ -20,8 +20,6 @@ const urlLocationHandler = async () => {
   // document.title = route.title;
   let template = "";
 
-  console.log(location);
-
   if (location === "") {
     template = `
       <section class="carousel-section">
@@ -54,8 +52,6 @@ const urlLocationHandler = async () => {
       </div>
     `;
   }
-
-  // const html = await fetch(template).then((response) => response.text());
 
   document.getElementById("main-content-page").innerHTML = template;
 
