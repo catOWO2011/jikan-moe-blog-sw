@@ -147,52 +147,84 @@ const Utils = function () {
           </div>
           <div class="table-info">
                   <div class="cell-info">
-                    <ion-icon name="desktop-outline"></ion-icon>
-                    <span class="cell-label">Type  </span>
+                    <div>
+                      <ion-icon name="desktop-outline"></ion-icon>
+                      <span class="cell-label">Type  </span>
+                    </div>
                     <!-- type -->
-                    <span class="cell-content"><%- item.type %></span>
+                    <div>
+                      <span class="cell-content"><%- item.type %></span>
+                    </div>
                   </div>
                   <div class="cell-info">
-                    <ion-icon name="film-outline"></ion-icon>
-                    <span class="cell-label">Episodes  </span>
+                    <div>
+                      <ion-icon name="film-outline"></ion-icon>
+                      <span class="cell-label">Episodes  </span>
+                    </div>
                     <!-- episodes -->
-                    <span class="cell-content"><%- item.episodes %></span>
+                    <div>
+                      <span class="cell-content"><%- item.episodes %></span>
+                    </div>
                   </div>
                   <div class="cell-info">
-                    <ion-icon name="ellipsis-horizontal-circle-outline"></ion-icon>
-                    <span class="cell-label">Status  </span>
+                    <div>
+                      <ion-icon name="ellipsis-horizontal-circle-outline"></ion-icon>
+                      <span class="cell-label">Status  </span>
+                    </div>
                     <!-- status -->
-                    <span class="cell-content"><%- item.status %></span>
+                    <div>
+                      <span class="cell-content"><%- item.status %></span>
+                    </div>
                   </div>
                   <div class="cell-info">
-                    <ion-icon name="calendar-number-outline"></ion-icon>
-                    <span class="cell-label">Aired  </span>
+                    <div>
+                      <ion-icon name="calendar-number-outline"></ion-icon>
+                      <span class="cell-label">Aired  </span>
+                    </div>
                     <!-- aired.string -->
-                    <span class="cell-content"><%- item.airedString %></span>
+                    <div>
+                      <span class="cell-content"><%- item.airedString %></span>
+                    </div>
                   </div>
                   <div class="cell-info">
-                    <ion-icon name="pricetags-outline"></ion-icon>
-                    <span class="cell-label">Genres  </span>
+                    <div>
+                      <ion-icon name="pricetags-outline"></ion-icon>
+                      <span class="cell-label">Genres  </span>
+                    </div>
                     <!-- genres[name1,name2] -->
-                    <span class="cell-content"><%- item.genres %></span>
+                    <div>
+                      <span class="cell-content"><%- item.genres %></span>
+                    </div>
                   </div>
                   <div class="cell-info">
-                    <ion-icon name="alarm-outline"></ion-icon>
-                    <span class="cell-label">Duration  </span>
+                    <div>
+                      <ion-icon name="alarm-outline"></ion-icon>
+                      <span class="cell-label">Duration  </span>
+                    </div>
                     <!-- duration -->
-                    <span class="cell-content"><%- item.duration %></span>
+                    <div>
+                      <span class="cell-content"><%- item.duration %></span>
+                    </div>
                   </div>
                   <div class="cell-info">
-                    <ion-icon name="checkmark-circle-outline"></ion-icon>
-                    <span class="cell-label">Rating  </span>
+                    <div>
+                      <ion-icon name="checkmark-circle-outline"></ion-icon>
+                      <span class="cell-label">Rating  </span>
+                    </div>
                     <!-- rating -->
-                    <span class="cell-content"><%- item.rating %></span>
+                    <div>
+                      <span class="cell-content"><%- item.rating %></span>
+                    </div>
                   </div>
                   <div class="cell-info">
-                    <ion-icon name="trending-up-outline"></ion-icon>
-                    <span class="cell-label">Rank  </span>
+                    <div>
+                      <ion-icon name="trending-up-outline"></ion-icon>
+                      <span class="cell-label">Rank  </span>
+                    </div>
                     <!-- rank -->
-                    <span class="cell-content"><%- item.rank %></span>
+                    <div>
+                      <span class="cell-content"><%- item.rank %></span>
+                    </div>
                   </div>
                 </div>
           <div class="anime-general-subdetails-container">

@@ -27,7 +27,7 @@ html {
   scroll-padding-top: 6rem;
 }
 
-@media (max-width:991px) {
+@media (max-width:953px) {
   html {
     font: 55%;
   }

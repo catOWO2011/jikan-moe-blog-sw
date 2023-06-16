@@ -116,6 +116,11 @@
   padding: 1rem;
 }
 
+.anime-details-container .table-info .cell-info>div {
+  display: flex;
+  align-items: center;
+}
+
 .anime-details-container .table-info .cell-info ion-icon {
   margin-right: 1rem;
   font-size: 3rem;
@@ -220,6 +225,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, 30rem);
   gap: 1.5rem;
+  justify-content: center;
 }
 
 .character-container {
@@ -261,4 +267,21 @@
 .character-container .character-information .role {
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+@media only screen and (max-width:953px) {
+  .body-container-anime-details .anime-details-container .anime-general-details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .body-container-anime-details .anime-details-container .anime-general-details .anime-image-section-detail {
+    display: flex;
+    justify-content: center;
+  }
+
+  .body-container-anime-details .anime-details-container .table-info .cell-info {
+    display: flex;
+    flex-direction: column;
+  }
 }

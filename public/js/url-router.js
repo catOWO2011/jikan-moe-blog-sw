@@ -60,7 +60,6 @@ const urlLocationHandler = async () => {
       selector: ".carousel-section",
       classData: "season-now-carousel",
     });
-
     await utils.buildAnimeContainer({
       selector: ".section-container",
       classData: "",

@@ -9,6 +9,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
+  /* width: max-content; */
 }
 
 .header .flex {
@@ -110,7 +111,7 @@ li {
   height: 3rem;
 }
 
-@media (max-width:768px) {
+@media only screen and (max-width:953px) {
   #menu-btn {
     display: inline-block;
     background-color: var(--pink);
@@ -139,6 +140,11 @@ li {
   .header .flex .navbar.active {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     /* Check https://bennettfeely.com/clippy/ this shows the menu */
+  }
+
+  .header .flex .navbar.active .navbar-options {
+    display: flex;
+    flex-direction: column;
   }
 
   .header .flex .navbar a {
