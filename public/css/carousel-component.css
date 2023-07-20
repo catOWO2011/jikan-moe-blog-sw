@@ -6,7 +6,7 @@
   margin: 4.5rem auto;
   padding: 3.2rem;
   padding-left: 20%;
-  padding-right: 16rem;
+  padding-right: 20%;
   position: relative;
   background-image: url(../img/carousel-background.jpg);
   background-position: center;
@@ -25,18 +25,32 @@
   width: 100%;
 }
 
-.carousel-image {
+.carousel-image-container {
   height: 29rem;
-  border-radius: 8px;
+  /* width: fit-content; */
+  padding: 1rem;
+  box-sizing: border-box;
   transform: scale(1.5);
+  position: relative;
+  width: 70%;
+}
+
+.carousel-image {
+  height: 100%;
+  border-radius: 8px;
   box-shadow: 0 12px 24px rgba(228, 219, 243, 0.75);
+  transform: translate3d(0, -2px, 0);
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+  width: auto;
 }
 
 .carousel .btn {
   background-color: #fff;
   border: none;
-  height: 4rem;
-  width: 4rem;
+  height: 5rem;
+  width: 5rem;
   position: absolute;
   border-radius: 50%;
   box-shadow: 0 12px 24px rgba(251, 161, 161, 0.8);
@@ -44,15 +58,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.carousel .btn {
   cursor: pointer;
+  color: #a1a2a6;
 }
 
 .carousel .btn .button-icon {
-  height: 2.4rem;
-  width: 2.4rem;
+  height: 3rem;
+  width: 3rem;
 }
 
 .carousel .btn.btn-left {
@@ -99,6 +111,7 @@
   flex-grow: 1;
   /* Fill remainder space */
   color: #ffffff;
+  width: 100%;
 }
 
 .carousel .anime-main-description h1 {

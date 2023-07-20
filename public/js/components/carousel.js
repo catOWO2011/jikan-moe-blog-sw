@@ -16,7 +16,9 @@ class Carousel {
         _.each(items, (item, key, list) => {
       %>
         <div id="<%- item.id %>" class="carousel-content <%- key === 0 ? 'display-carousel-content' : 'hide-carousel-content' %>">
-          <img class="carousel-image" src="<%- item.imageUrl %>" alt="anime-image">
+          <div class="carousel-image-container">
+            <img class="carousel-image" src="<%- item.imageUrl %>" alt="anime-image">
+          </div>
           <div class="anime-main-description">
             <h1><%- item.title %></h1><br>
             <div class="synopsis">
@@ -29,12 +31,12 @@ class Carousel {
       %>
 
       <button class="btn btn-left">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="button-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="button-icon">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
         </svg>
       </button>
       <button class="btn btn-right">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="button-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="button-icon">
           <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
         </svg>
       </button>
