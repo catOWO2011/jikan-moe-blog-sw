@@ -167,6 +167,10 @@
   background: #9078b7;
 }
 
+.anime-details-container .anime-general-subdetails-container .anime-general-subdetails .anime-general-subdetails-tab-container .nav-tabs li .image-tab {
+  display: none;
+}
+
 .anime-general-subdetails-tab-container-content {
   padding: 2rem;
   border: 0.6rem solid #9078b7;
@@ -179,7 +183,7 @@
   grid-template-columns: repeat(auto-fit, 20rem);
   gap: 1.5rem;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .anime-general-subdetails-tab-container-content .videos-content .video-list-outer {
@@ -217,6 +221,23 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
+}
+
+.anime-general-subdetails-tab-container-content .empty-content-videos {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.anime-general-subdetails-tab-container-content .empty-content-videos img {
+  width: 30%;
+}
+
+.anime-general-subdetails-tab-container-content .empty-content-videos span {
+  font-size: 2rem;
+  margin-top: 2rem;
+  font-family: 'Montserrat';
 }
 
 /* ANIME CHARACTER CARD */
@@ -269,6 +290,45 @@
   font-weight: bold;
 }
 
+.table-episodes-info {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.episodes-table-info {
+  border-collapse: collapse;
+  background: white;
+}
+
+.episodes-table-info th {
+  border: #ffbb63 1px solid;
+  padding: 1rem;
+  background: #ffbb63;
+  color: white;
+  border-right: 1px solid white;
+  font-family: 'Montserrat';
+}
+
+.episodes-table-info td {
+  padding: 1rem;
+  text-align: center;
+  border: #ffbb63 1px solid;
+  text-align: left;
+}
+
+.episodes-table-info td .title-column span:first-of-type {
+  display: flex;
+  flex-direction: column;
+  color: #ffbb63;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.episodes-table-info td .title-column span {
+  padding-top: 5px;
+}
+
 @media only screen and (max-width:953px) {
   .body-container-anime-details .anime-details-container .anime-general-details {
     display: flex;
@@ -283,5 +343,76 @@
   .body-container-anime-details .anime-details-container .table-info .cell-info {
     display: flex;
     flex-direction: column;
+  }
+
+  .nav-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .nav-tabs li {
+    border-radius: 0rem !important;
+    font-size: 1.5rem !important;
+    margin: 0 !important;
+    display: flex !important;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-tabs li.active .title-tab {
+    display: block;
+  }
+
+  .nav-tabs li:not(.active) .title-tab {
+    display: none;
+  }
+
+  .nav-tabs li .image-tab {
+    display: block !important;
+  }
+
+  .anime-general-subdetails-tab-container-content {
+    border-radius: 0 !important;
+  }
+
+  .anime-general-subdetails-tab-container-content .empty-content-videos img {
+    width: 100%;
+  }
+
+  .episodes-table-info {
+    border: 0;
+  }
+
+  .episodes-table-info thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .episodes-table-info td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+  }
+
+  .episodes-table-info td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .episodes-table-info td:last-child {
+    border-bottom: 0;
   }
 }

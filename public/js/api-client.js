@@ -228,6 +228,41 @@ const APIClient = function () {
 
     return data;
   };
+
+  this.getAnimeEpisodes = async (animeId) => {
+    let data = [];
+
+    try {
+      let response = await this.makeRequest({
+        type: GET,
+        url: `${BASE_URL}/${API_VERSION}/anime/${animeId}/episodes`,
+      });
+
+      if (
+        !_.isNull(response) &&
+        !_.isUndefined(response) &&
+        !_.isEmpty(response)
+      ) {
+        for (const {
+          title,
+          title_japanese: japaneseTitle,
+          title_romanji: romanjiTitle,
+          aired,
+          score,
+        } of response) {
+          data.push({
+            title,
+            japaneseTitle,
+            romanjiTitle,
+            aired,
+            score,
+          });
+        }
+      }
+    } catch (error) {}
+
+    return data;
+  };
 };
 
 export default new APIClient();

@@ -232,13 +232,22 @@ const Utils = function () {
               <div class="anime-general-subdetails-tab-container">
                 <ul class="nav-tabs">
                   <li class="active anime-tab" data-content="videos" data-container="video-content-container">
-                    Videos
+                    <span class="title-tab">Videos</span>
+                    <span class="image-tab">
+                      <ion-icon name="videocam-outline" size="large"></ion-icon>
+                    </span>
                   </li>
                   <li class="anime-tab" data-content="characters" data-container="characters-content-container">
-                    Characters & Staff
+                    <span class="title-tab">Characters & Staff</span>
+                    <span class="image-tab">
+                      <ion-icon name="person-circle-outline" size="large"></ion-icon>
+                    </span>
                   </li>
-                  <li class="anime-tab" data-content="episodes">
-                    Episodes
+                  <li class="anime-tab" data-content="episodes" data-container="episodes-content-container">
+                    <span class="title-tab">Episodes</span>
+                    <span class="image-tab">
+                      <ion-icon name="film-outline" size="large"></ion-icon>
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -260,29 +269,50 @@ const Utils = function () {
     if (!_.isEmpty(animeInformation)) {
       $(selector).html(animeInformationHTML);
 
-      this.buildAnimeDetailsVideos({
-        selector: `.anime-general-subdetails-tab-container-content .video-content-container`,
-        animeId,
-      });
+      const buildActions = [
+        async () => {
+          await this.buildAnimeDetailsVideos({
+            selector: `.anime-general-subdetails-tab-container-content .video-content-container`,
+            animeId,
+          });
+        },
+        async () => {
+          await this.buildAnimeDetailsCharacteres({
+            selector:
+              ".anime-general-subdetails-tab-container-content .characters-content-container",
+            animeId,
+          });
+        },
+        async () => {
+          await this.buildAnimeDetailsEpisodes({
+            selector:
+              ".anime-general-subdetails-tab-container-content .episodes-content-container",
+            animeId,
+          });
+        },
+      ];
 
-      this.buildAnimeDetailsCharacteres({
-        selector:
-          ".anime-general-subdetails-tab-container-content .characters-content-container",
-        animeId,
-      });
+      for (const action of buildActions) {
+        const delayFunction = setTimeout(() => {
+          action();
+          clearTimeout(delayFunction);
+        }, 2000);
+      }
 
-      console.log(
-        $(
-          ".anime-general-subdetails-tab-container-content .characters-content-container"
-        )
-      );
       $(
         ".anime-general-subdetails-tab-container-content .characters-content-container"
+      ).hide();
+      $(
+        ".anime-general-subdetails-tab-container-content .episodes-content-container"
       ).hide();
 
       let activeTab = "videos";
       $("li.anime-tab").on("click", function (event) {
-        const newTab = $(event.target);
+        let target = $(event.target).parents("li");
+
+        target = target.length === 0 ? $(event.target) : target;
+
+        const newTab = $(target);
         const newTabName = newTab.data("content");
 
         if (newTabName !== activeTab) {
@@ -309,7 +339,7 @@ const Utils = function () {
     const episodesInformation = await apiClient.getAnimeVideos(animeId);
 
     const CONTAINER_TEMPLATE = `
-      <div class="videos-content">
+      <div class=" <%= !_.isEmpty(items) ? "videos-content" : "empty-content-videos" %>">
         <%
           _.each(items, (item, key, list) => {
         %>
@@ -317,7 +347,7 @@ const Utils = function () {
             <!-- url -->
             <a href="<%- item.url %>" class="video-link">
               <!-- images.jpg.image_url -->
-              <img src="<%- item.imageUrl %>" alt="">
+              <img src="<%- item.imageUrl %>" alt="video-image">
               <div class="video-info-container">
                 <span>
                   <!-- episode -->
@@ -334,16 +364,18 @@ const Utils = function () {
         <%
           });
         %>
+        <% if (_.isEmpty(items)) { %>
+          <img src="img/sad-girl.png" alt="video-image">
+          <span>No content at the moment...</span>
+        <% } %>
       </div>
     `;
 
-    if (!_.isEmpty(episodesInformation)) {
-      const animeVideosHTML = _.template(CONTAINER_TEMPLATE)({
-        items: episodesInformation,
-      });
+    const animeVideosHTML = _.template(CONTAINER_TEMPLATE)({
+      items: episodesInformation,
+    });
 
-      $(selector).html(animeVideosHTML);
-    }
+    $(selector).html(animeVideosHTML);
   };
 
   this.buildAnimeDetailsCharacteres = async ({ selector, animeId }) => {
@@ -381,6 +413,52 @@ const Utils = function () {
 
       $(selector).html(animeCharactersHTML);
     }
+  };
+
+  this.buildAnimeDetailsEpisodes = async ({ selector, animeId }) => {
+    const episodesInformation = await apiClient.getAnimeEpisodes(animeId);
+
+    const CONTAINER_TEMPLATE = `
+      <div class="table-episodes-info">
+        <table class="episodes-table-info">
+          <thead>
+            <tr>
+              <th scope="col">Episode Title</th>
+              <th scope="col">Aired</th>
+              <th scope="col">Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%
+              _.each(items, (item, key, list) => {
+            %>
+              <tr>
+                <td>
+                  <div class="title-column">
+                    <span><%- item.title %></span>
+                    <span><%- item.romanjiTitle %>(<%- item.japaneseTitle %>)</span>
+                  </div>
+                </td>
+                <td>
+                  <%- moment(item.aired).format("MMMM Do YYYY") %>
+                </td>
+                <td>
+                  <%- item.score %>
+                </td>
+              </tr>
+            <%
+              });
+            %>
+          </tbody>
+        </table>
+      </div>
+    `;
+
+    const animeEpisodesHTML = _.template(CONTAINER_TEMPLATE)({
+      items: episodesInformation,
+    });
+
+    $(selector).html(animeEpisodesHTML);
   };
 };
 
